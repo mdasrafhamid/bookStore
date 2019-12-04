@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mx-auto">
+            <li class="nav-item" *ngFor="let link of links">
+                
+                <a class="nav-link" [routerLink]="['/category', link]">{{link|titlecase}}</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<!-- <app-category [category]="initCategory"></app-category> -->

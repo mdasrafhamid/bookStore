@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <form class="form-inline mx-auto my-2 my-lg-0 ">
+            <input #si class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" (click)="onSearch(si)" type="submit">Search</button>
+        </form>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+            </li>
+            <li *ngIf="!userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/login">Sign in</a>
+            </li>
+            <li *ngIf="!userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/register">Register</a>
+            </li>
+            <li *ngIf="userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/showprofile">Welcome,{{userService.getCurrentUser().name}}</a>
+            </li>
+            <!-- <li *ngIf="userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/movies">Movies</a>
+            </li> -->
+            <li *ngIf="userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/profile">My Orders</a>
+            </li>
+            <li *ngIf="userService.getCurrentUser()" class="nav-item">
+                <a class="nav-link" routerLink="/profile">Sign Out</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" routerLink="/register">Cart</a>
+            </li>
+        </ul>
+
+    </div>
+</nav>

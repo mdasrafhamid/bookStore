@@ -1,0 +1,27 @@
+<app-catbar></app-catbar>
+<!-- <div class="container">
+    <h1 class="text-center">{{category|titlecase}}</h1>
+    <div class="card-group">
+        <div class="mx-3" *ngFor="let b of booksByCategory" (click)="onSelect(b)">
+            <div class="card" style="width: 12rem;">
+                <img class="card-img-top" src="assets/img/{{b.image}}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <h1 class="text-center">{{category|titlecase}}</h1>
+    <div *ngIf="books.length>0;else noBooks">
+        <div class="mybook" *ngFor="let b of booksByCategory">
+            <app-single-book (bookSelect)="onSelect($event)" [book]="b">
+            </app-single-book>
+        </div>
+    </div>
+
+    <ng-template #noBooks>
+        <div>
+            <h3>No books</h3>
+        </div>
+    </ng-template>
+
+</div>

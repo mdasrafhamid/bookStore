@@ -1,0 +1,17 @@
+<div class="container-fluid py-3">
+    <div class="row content px-3">
+        <h2>Customer Reviews</h2>
+        <button (click)="onClick()" class="mx-auto" type="submit">Write a customer review</button>
+    </div>
+    <div class="mx-3" *ngFor="let r of reviews">
+        <div class="card">
+            <h4>
+                <ngbd-rating-decimal [currentRate]=r.rating></ngbd-rating-decimal>
+                {{r.headline}}
+            </h4>
+            <p>by {{r.cid}} on {{r.time | date}}</p>
+            <p>"{{r.comment}}"</p>
+        </div>
+    </div>
+
+</div>

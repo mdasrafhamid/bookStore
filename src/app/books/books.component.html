@@ -1,0 +1,33 @@
+
+<div class="container">
+    <h2 class="text-center">New Books:</h2>
+    <div class="card-group">
+        <div class="mx-3" *ngFor="let b of books" (click)="onSelect(b)">
+            <div class="card" style="width: 12rem;">
+                <img class="card-img-top" src="assets/img/{{b.image}}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- src="assets/img/{{b.image}}" -->
+<div class="container">
+    <h2 class="text-center">Best Selling Books:</h2>
+    <div class="card-group">
+        <div class="mx-3" *ngFor="let b of books" (click)="onSelect(b)">
+            <div class="card" style="width: 12rem;">
+                <img class="card-img-top" src="assets/img/{{b.image}}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- http://10.127.149.175:8085/images/{{b.image}} -->
+<div class="container">
+    <h2 class="text-center">Most Favoured Books:</h2>
+    <div class="card-group">
+        <div class="mx-3" *ngFor="let b of books" (click)="onSelect(b)">
+            <div class="card" style="width: 12rem;">
+                <img class="card-img-top" src="assets/img/{{b.image}}" alt="Card image cap">
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+
+<app-catbar></app-catbar>
+<h2 class="text-center">Search Results for {{queryString}} </h2>
+
+<div>
+    <!-- <input type="text" [(ngModel)]="queryString" id="search" placeholder="Search to type"> -->
+    
+    <div *ngFor="let b of books | SearchPipe: queryString">
+        <app-search-item (bookSelect)="onSelect($event)" [book]="b">
+        </app-search-item>
+    </div>
+
+</div>

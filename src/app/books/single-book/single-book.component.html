@@ -1,0 +1,9 @@
+<div class="card" (click)="onSelect()" style="width: 18rem;">
+    <img src="assets/img/{{book.image}}" class="card-img-top" alt="book image">
+    <div class="card-body" >
+        <h5 class="card-title">{{book.title}}</h5>
+        <ngbd-rating-decimal [currentRate]=book.rating></ngbd-rating-decimal>
+        <p class="card-text">by {{book.author}}</p>
+        <h5 class="card-text">{{book.price|currency}}</h5>
+    </div>
+</div>
